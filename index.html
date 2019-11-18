@@ -1,0 +1,111 @@
+
+<html>
+<head>
+<style>
+html *
+{
+   font-size: 1em !important;
+   color: #000 !important;
+   font-family: Arial !important;
+}
+.main-wrapper{
+  position: relative;
+  width: 400px;
+  height: 250px;
+  border: 1px solid grey;
+  background-color: white;
+}
+.btm-toolbar{
+  position: absolute;
+  bottom: 0px;
+  width: 399px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid grey;
+}
+.main-window-wrapper{
+  position: absolute;
+  bottom: 50px;
+  right: 55px;
+  width: 300px;
+  height: 160px;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid grey;
+
+
+  font-size: 0.7em !important;
+}
+.start-window{
+  position: absolute;
+  bottom: 31px;
+  left: 0px;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border: 1px solid grey;
+}
+.top-login-text{
+    width: 300px;
+    background-color: white;
+}
+.close-window-button{
+  border: 1px solid grey;
+  width: 300px;
+}
+.float-close-right{
+ float: right; 
+}
+.toolbar-date{
+  float: right;
+}
+.toolbar-start{
+  float: left;
+}
+</style>
+</head>
+<body>
+<div class="main-wrapper" id="main-wrapper-id">
+
+<div id="top-login-text"></div>
+
+<div id="intro-text">
+Please create a user account to login
+<br>User: 
+</div>
+  
+<input type="text" id="user-name" required>
+<input type="submit"value="Create"id="submit-name">
+
+
+<div class="main-window-wrapper" id="app-window">
+<span class="close-window-button" id="close-window"><span class="float-close-right">X</span></span>
+<div id="main-window-content"></div>
+</div>
+
+
+<div class="start-window" id="start-menu">
+<!--put start menu crap here -->
+<span class="start-window-calculator" id="menu-calculator">Calculator</span><br>
+<span class="start-window-contacts" id="menu-contacts">Contacts</span><br>
+<span class="start-window-system" id="menu-system">System</span><br>
+<span class="start-window-settings" id="menu-settings">Settings</span>
+<!--end of start menu-->
+</div>
+
+<div id="bottom-toolbar" class="btm-toolbar">
+<div id="start-display" class="toolbar-start">Start</div>
+<div id="date-display" class="toolbar-date"></div>
+  
+</div>
+</div>
+<script type="module" src="/main.js"></script>
+    <script type="module">
+        import Main from "/main.js";
+        document.addEventListener('DOMContentLoaded', ()=>{
+            let app = new Main();
+            app.main();
+        })
+</script>
+</body>
+</html>
